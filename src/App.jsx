@@ -52,7 +52,7 @@ export const App = () => {
     isReversed,
   });
 
-  const reset = () => {
+  const resetGoods = () => {
     setSortField('');
     setIsReversed(false);
   };
@@ -94,7 +94,7 @@ export const App = () => {
           <button
             type="button"
             className="button is-danger is-light"
-            onClick={reset}
+            onClick={resetGoods}
           >
             Reset
           </button>
@@ -103,7 +103,9 @@ export const App = () => {
 
       <ul>
         {visibleGoods.map(good => (
-          <li data-cy="Good">{good}</li>
+          <li data-cy="Good" key={good}>
+            {good}
+          </li>
         ))}
       </ul>
     </div>
